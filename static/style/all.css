@@ -8,8 +8,13 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    margin: 4px 0;
 }
 
 .margin_h {
     margin: 0 12px;
+}
+
+body {
+    margin-left: 4px;
 }
