@@ -10,10 +10,12 @@ function update_loop() {
 
 function update() {
     console.log("Uppdaterar lista...")
-    httpGetAsync("data", consume_data)
+    get("get", consume_data)
 }
 
 function consume_data(data) {
+    console.log(data)
+
     data = JSON.parse(data)
 
     html = ""
@@ -50,7 +52,7 @@ function consume_data(data) {
 function on_add(index) {
     value = prompt()
     if (value != null && value != "") {
-        httpPostAsync(
+        post(
             "add_item",
             JSON.stringify({
                 "index": index,
@@ -62,7 +64,7 @@ function on_add(index) {
 }
 
 function on_item_move(amount, list_index, item_index) {
-    httpPostAsync(
+    post(
         "move_item",
         JSON.stringify({
             "list":      list_index,
@@ -76,7 +78,7 @@ function on_item_move(amount, list_index, item_index) {
 function on_add_list() {
     value = prompt()
     if (value != null && value != "") {
-        httpPostAsync(
+        post(
             "add_list",
             JSON.stringify({
                 "name": value
@@ -87,7 +89,7 @@ function on_add_list() {
 }
 
 function on_list_move(amount, index) {
-    httpPostAsync(
+    post(
         "move_list",
         JSON.stringify({
             "old_index": index,
@@ -98,7 +100,7 @@ function on_list_move(amount, index) {
 }
 
 function on_list_remove(index) {
-    httpPostAsync(
+    post(
         "remove_list",
         JSON.stringify({
             "index": index
@@ -108,7 +110,7 @@ function on_list_remove(index) {
 }
 
 function on_item_remove(list_index, item_index) {
-    httpPostAsync(
+    post(
         "remove_item",
         JSON.stringify({
             "list_index": list_index,
@@ -121,7 +123,7 @@ function on_item_remove(list_index, item_index) {
 function on_list_rename(index) {
     value = prompt()
     if (value != null && value != "") {
-        httpPostAsync(
+        post(
             "rename_list",
             JSON.stringify({
                 "index": index,
@@ -135,7 +137,7 @@ function on_list_rename(index) {
 function on_item_rename(list_index, item_index) {
     value = prompt()
     if (value != null && value != "") {
-        httpPostAsync(
+        post(
             "rename_item",
             JSON.stringify({
                 "list_index": list_index,
@@ -154,6 +156,16 @@ function handle_response(response) {
         console.log("Received error from server!")
         console.log(response)
     }
+}
+
+function post(theUrl, data, callback) {
+    theUrl = window.location.href + "/" + theUrl
+    httpPostAsync(theUrl, data, callback)
+}
+
+function get(theUrl, callback) {
+    theUrl = window.location.href + "/" + theUrl
+    httpGetAsync(theUrl, callback)
 }
 
 // https://stackoverflow.com/questions/247483/http-get-request-in-javascript
