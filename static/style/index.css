@@ -1,0 +1,11 @@
+a {
+    font-size: 24px;
+}
+
+a:hover {
+    color: var(--pink2);
+}
+
+a:active {
+    color: var(--pink3);
+}

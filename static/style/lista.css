@@ -1,0 +1,10 @@
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4px 0;
+}
+
+.row * {
+    margin-right: 4px;
+}

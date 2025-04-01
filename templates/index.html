@@ -1,7 +1,12 @@
 <!DOCTYPE html>
+<head>
+    <script src="static/scripts/index.js"></script>
+    <link rel="stylesheet" href="static/style/all.css">
+    <link rel="stylesheet" href="static/style/index.css">
+</head>
 <body>
-{% for item in data %}
-<a href="{{ item }}">{{ item }}</a>
-{% endfor %}
+    {% for item in data %}
+    <a href="{{ item }}">{{ item }}</a>
+    {% endfor %}
 </body>
 </html>

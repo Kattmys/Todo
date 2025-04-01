@@ -2,19 +2,30 @@
     margin:  0;
     padding: 0;
     box-sizing: border-box;
+
+    color: white;
+
+    --pink0: #f47c91;
+    --pink1: #ff2a8e;
+    --pink2: #dd0a6e;
+    --pink3: #bb004e;
 }
 
-.row {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 4px 0;
+button {
+    background-color: var(--pink1);
+    padding: 4px;
+    border: none;
 }
 
-.row * {
-    margin-right: 4px;
+button:hover {
+    background-color: var(--pink2);
+}
+
+button:active {
+    background-color: var(--pink3);
 }
 
 body {
     margin-left: 4px;
+    background-color: var(--pink0);
 }
