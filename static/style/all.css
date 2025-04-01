@@ -11,8 +11,8 @@
     margin: 4px 0;
 }
 
-.margin_h {
-    margin: 0 12px;
+.row * {
+    margin-right: 4px;
 }
 
 body {

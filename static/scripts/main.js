@@ -31,14 +31,14 @@ function consume_data(data) {
                 <ul>`
 
         for (j=0; j<data[i]["list"].length; j++) {
-            html += `<li class='row'><div class='margin_h'>
-                    <button onclick='on_item_move(-1, ` + i + ", " + j + `)'>Upp</button>
-                    <button onclick='on_item_move( 1, ` + i + ", " + j + `)'>Ner</button>
-                    <button onclick='on_item_remove(`   + i + ", " + j + `)'>Ta bort</button>
-                    <button onclick='on_item_rename(`   + i + ", " + j + `)'>Byt namn</button>
-                    </div>` +
+            html += `<li class='row'><div>
+                     <button onclick='on_item_move(-1, ` + i + ", " + j + `)'>Upp</button>` +
+                    `<button onclick='on_item_move( 1, ` + i + ", " + j + `)'>Ner</button>` +
+                    `<button onclick='on_item_remove(`   + i + ", " + j + `)'>Ta bort</button>` +
+                    `<button onclick='on_item_rename(`   + i + ", " + j + `)'>Byt namn</button>` +
+                    `</div><p class='item'>` +
                     data[i]["list"][j] +
-                    "</li>"
+                    "</p></li>"
         }
 
         html += "</div>"
