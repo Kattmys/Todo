@@ -1,0 +1,15 @@
+* {
+    margin:  0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.margin_h {
+    margin: 0 12px;
+}
