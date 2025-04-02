@@ -1,5 +1,11 @@
 #plus { width: calc(100% - 4px); }
 
+#list-head {
+    margin-bottom: 22px;
+
+    font-size: 40px;
+}
+
 .list_name {
     margin-top: 20px;
     margin-bottom: 10px;
