@@ -28,7 +28,7 @@ def get(lista):
 @app.route("/<lista>/<metod>", methods=["POST"])
 def post(lista, metod):
     try:
-        todo = data[lista]
+        todo = data[lista]["lists"]
         r = json.loads(flask.request.data.decode("utf-8"))
 
         match metod:
