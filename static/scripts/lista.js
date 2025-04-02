@@ -8,45 +8,13 @@ function update_loop() {
     setTimeout(update_loop, 1000 * 10)
 }
 
-function update() {
-    console.log("Uppdaterar lista...")
-    get("get", consume_data)
+function load_data(data) {
+    document.getElementById("body").innerHTML = data
 }
 
-function consume_data(data) {
-    console.log(data)
-
-    data = JSON.parse(data)
-
-    html = ""
-
-    for (i=0; i<data.length; i++) {
-        html += `<div class='list'>
-                <h2 class="list_name">` + data[i]["name"] + `</h2>
-                <div class='row'>
-                <button onclick='on_list_move(-1, ` + i + `)'>Upp</button>
-                <button onclick='on_list_move( 1, ` + i + `)'>Ner</button>
-                <button onclick='on_add(`           + i + `)'>Lägg till</button>
-                <button onclick='on_list_remove(`   + i + `)'>Ta bort lista</button>
-                <button onclick='on_list_rename(`   + i + `)'>Byt namn</button>
-                </div>
-                <ul>`
-
-        for (j=0; j<data[i]["list"].length; j++) {
-            html += `<li class='row'><div>
-                     <button onclick='on_item_move(-1, ` + i + ", " + j + `)'>Upp</button>` +
-                    `<button onclick='on_item_move( 1, ` + i + ", " + j + `)'>Ner</button>` +
-                    `<button onclick='on_item_remove(`   + i + ", " + j + `)'>Ta bort</button>` +
-                    `<button onclick='on_item_rename(`   + i + ", " + j + `)'>Byt namn</button>` +
-                    `</div><p class='item'>` +
-                    data[i]["list"][j] +
-                    "</p></li>"
-        }
-
-        html += "</div>"
-    }
-    
-    document.getElementById("lists").innerHTML = html
+function update() {
+    console.log("Uppdaterar lista...")
+    httpGetAsync(window.location.href, load_data)
 }
 
 function on_add(index) {
@@ -57,8 +25,7 @@ function on_add(index) {
             JSON.stringify({
                 "index": index,
                 "value": value
-            }),
-            handle_response
+            })
         )
     }
 }
@@ -70,8 +37,7 @@ function on_item_move(amount, list_index, item_index) {
             "list":      list_index,
             "old_index": item_index,
             "new_index": item_index + amount
-        }),
-        handle_response
+        })
     )
 }
 
@@ -82,8 +48,7 @@ function on_add_list() {
             "add_list",
             JSON.stringify({
                 "name": value
-            }),
-            handle_response
+            })
         )
     }
 }
@@ -94,8 +59,7 @@ function on_list_move(amount, index) {
         JSON.stringify({
             "old_index": index,
             "new_index": index + amount
-        }),
-        handle_response
+        })
     )
 }
 
@@ -104,8 +68,7 @@ function on_list_remove(index) {
         "remove_list",
         JSON.stringify({
             "index": index
-        }),
-        handle_response
+        })
     )
 }
 
@@ -115,8 +78,7 @@ function on_item_remove(list_index, item_index) {
         JSON.stringify({
             "list_index": list_index,
             "item_index": item_index
-        }),
-        handle_response
+        })
     )
 }
 
@@ -128,8 +90,7 @@ function on_list_rename(index) {
             JSON.stringify({
                 "index": index,
                 "name": value
-            }),
-            handle_response
+            })
         )
     }
 }
@@ -143,8 +104,7 @@ function on_item_rename(list_index, item_index) {
                 "list_index": list_index,
                 "item_index": item_index,
                 "name": value
-            }),
-            handle_response
+            })
         )
     }
 }
@@ -158,15 +118,15 @@ function handle_response(response) {
     }
 }
 
-function post(theUrl, data, callback) {
+function post(theUrl, data) {
     theUrl = window.location.href + "/" + theUrl
-    httpPostAsync(theUrl, data, callback)
+    httpPostAsync(theUrl, data, handle_response)
 }
 
-function get(theUrl, callback) {
-    theUrl = window.location.href + "/" + theUrl
-    httpGetAsync(theUrl, callback)
-}
+// function get(theUrl, callback) {
+//     theUrl = window.location.href + "/" + theUrl
+//     httpGetAsync(theUrl, callback)
+// }
 
 // https://stackoverflow.com/questions/247483/http-get-request-in-javascript
 function httpGetAsync(theUrl, callback) {
