@@ -15,7 +15,7 @@ def save_data():
 
 @app.route("/")
 def home():
-    return flask.render_template("index.html", data=list(data.keys()))
+    return flask.render_template("index.html", data=data)
 
 @app.route("/<lista>", methods=["GET"])
 def lista(lista):

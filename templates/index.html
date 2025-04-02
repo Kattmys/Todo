@@ -13,9 +13,8 @@
         {% for item in data %}
         <a class="link" href="{{ item }}">
             <section class="item interact">
-                <h2>{{ item }}</h2>
-                <p class="last_edited"> Last edited: {{ item.last_edited }} </p>
-                <p class="creation_date"> Created: {{ item.created }} </p>
+                <h2>{{ data[item].name }}</h2>
+                <p class="last_edited"> Last edited: {{ data[item].last_edited }} </p>
             </section>
         </a>
         {% endfor %}
