@@ -20,7 +20,7 @@ def home():
 
 @app.route("/<lista>", methods=["GET"])
 def lista(lista):
-    return flask.render_template("lista.html", listor=data[lista])
+    return flask.render_template("lista.html", listor=data[lista], name=lista)
 
 @app.route("/<lista>/get", methods=["GET"])
 def get(lista):
