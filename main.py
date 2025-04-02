@@ -1,6 +1,7 @@
 import flask
 import json
 import traceback
+import datetime
 
 app = flask.Flask(__name__)
 
@@ -42,6 +43,8 @@ def post(lista, metod):
             case "rename_list": todo[r["index"]]["name"] = r["name"]
             case _:
                 return "unknown command"
+
+        data[lista]["last_edited"] = datetime.datetime.now().isoformat(" ", "minutes")
 
         save_data()
         return "success"
