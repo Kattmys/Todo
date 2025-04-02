@@ -1,11 +1,39 @@
-a {
-    font-size: 24px;
+main {
+    display: inline-block;
 }
 
-a:hover {
-    color: var(--pink2);
+h1 {
+    margin: 15px 0px;
 }
 
-a:active {
-    color: var(--pink3);
+#items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-items: stretch;
+}
+
+.link {
+    text-decoration: none;
+    width: 100%;
+}
+
+.item {
+    margin-right: 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+
+    border-radius: 7px;
+}
+
+
+@media only screen and (min-width: 500px) {
+    .link {
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 835px) {
+    .link {
+        width:250px;
+    }
 }

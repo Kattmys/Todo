@@ -6,8 +6,20 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
-    {% for item in data %}
-    <a href="{{ item }}">{{ item }}</a>
-    {% endfor %}
+<main>
+    <h1 id="">Mycket att göra innan lördag</h1>
+
+    <div id="items">
+        {% for item in data %}
+        <a class="link" href="{{ item }}">
+            <section class="item interact">
+                <h2>{{ item }}</h2>
+                <p class="last_edited"> Last edited: {{ item.last_edited }} </p>
+                <p class="creation_date"> Created: {{ item.created }} </p>
+            </section>
+        </a>
+        {% endfor %}
+    </div>
+</main>
 </body>
 </html>

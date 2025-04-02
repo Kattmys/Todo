@@ -1,31 +1,32 @@
-* {
+:root, * {
     margin:  0;
     padding: 0;
     box-sizing: border-box;
 
-    color: white;
+    --bg0: #FFFFFF; /* white */
+    --bg1: #084C61; /* darkest cyan */
+    --bg2: #4F6D7A; /* lighter cyan */
+    --bg3: #56A3A6; /* lightest cyan */
+    --warn0: #E3B505; /* yellow */
+    --warn1: #DB504A; /* red */
 
-    --pink0: #f47c91;
-    --pink1: #ff2a8e;
-    --pink2: #dd0a6e;
-    --pink3: #bb004e;
+    color: var(--bg0);
 }
 
-button {
-    background-color: var(--pink1);
-    padding: 4px;
-    border: none;
+.interact {
+    background-color: var(--bg1);
+    transition: 0.1s;
 }
 
-button:hover {
-    background-color: var(--pink2);
+.interact:hover {
+    background-color: var(--warn0);
 }
 
-button:active {
-    background-color: var(--pink3);
+.interact:active {
+    background-color: var(--warn1);
 }
 
 body {
-    margin-left: 4px;
-    background-color: var(--pink0);
+    margin: 40px;
+    background-color: var(--bg2);
 }
