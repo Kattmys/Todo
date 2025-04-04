@@ -9,7 +9,13 @@ p  { font-size: var(--p-size); }
 h2 { font-size: var(--h2-size); }
 
 ul {
-    list-style-type: none;
+    padding-left: 22px;
+}
+
+ul li::marker {
+    color: var(--bg1);
+    font-size: 20px;
+    direction: horizontal;
 }
 
 p, h2 {
