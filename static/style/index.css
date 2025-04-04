@@ -34,6 +34,9 @@ h1 {
 
 @media only screen and (min-width: 835px) {
     .link {
-        width:250px;
+        width: 250px;
+    }
+    .item {
+        min-width: 110px;
     }
 }
