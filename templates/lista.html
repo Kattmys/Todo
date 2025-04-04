@@ -28,7 +28,10 @@
                 <ul>
                     {% for j in range(listor.lists[i]["list"] | length) %}
                         <li class="item row">
-                            <p>{{ listor.lists[i]["list"][j] }}</p>
+                            <!-- <div "list-element"> -->
+                            <!--     <div class="point">•</div> -->
+                            <p><span class="point">•</span>{{ listor.lists[i]["list"][j] }}</p>
+                            <!-- </div> -->
                             <div class="control">
                                 <button class="list-btn btn interact"  onclick='on_item_rename(  {{ i }}, {{ j }})'>#</button><!--
                              --><button class="list-btn btn interact"  onclick='on_item_remove(  {{ i }}, {{ j }})'>-</button><!--

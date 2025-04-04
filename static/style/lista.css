@@ -10,13 +10,23 @@ h2 { font-size: var(--h2-size); }
 
 ul {
     padding-left: 22px;
+    list-style-type: none;
 }
 
-ul li::marker {
+.point {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    position: relative;
+    right: 15px;
+    font-size: 22px;
     color: var(--bg1);
-    font-size: 20px;
-    direction: horizontal;
 }
+
+/* ul li::marker { */
+/*     color: var(--bg1); */
+/*     font-size: 20px; */
+/* } */
 
 p, h2 {
     display: inline-block;
