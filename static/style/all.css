@@ -32,3 +32,9 @@ body {
     padding: var(--padding);
     background-color: var(--bg2);
 }
+
+@media only screen and (max-width: 600px) {
+    * {
+        --padding: 20px;
+    }
+}
