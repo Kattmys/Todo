@@ -18,9 +18,9 @@ ul {
     width: 0;
     height: 0;
 
-    position: relative;
-    right: 18px;
-    top: 5px;
+    position: absolute;
+    left: -18px;
+    top:  -5px;
 
     font-size: 30px;
     color: var(--bg1);
@@ -84,6 +84,7 @@ h1 {
 
 .item {
     border-top: none;
+    position: relative;
 }
 
 .item p {
