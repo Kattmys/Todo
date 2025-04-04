@@ -22,26 +22,38 @@ p, h2 {
     display: inline-block;
 }
 
+h1 {
+    margin-bottom: 4px;
+}
+
+#lists {
+    display: flex;
+    margin-top: 24px;
+    flex-wrap: wrap;
+}
+
 .list {
     width: 300px;
     margin-bottom: 16px;
+    margin-right:  32px;
 }
 
 .btn {
     border: none;
-    height: var(--row-height);
 }
 
 .list-btn {
     width:  var(--row-height);
+    height: var(--row-height);
     background-color: initial;
 }
 
 .top-btn {
-    padding: 0 6px;
+    padding: 6px 12px;
+    border-radius: 3px;
 }
 
-.top-btn, .row .control {
+.row .control {
     border-radius: 3px;
 }
 
@@ -66,17 +78,19 @@ p, h2 {
     max-width: calc(100% - calc(var(--row-height) * 4));
 }
 
+.list-head {
+    border-bottom: 2px solid var(--bg1);
+    margin-bottom: 6px;
+}
+
 .list-head h2 {
     max-width: calc(100% - calc(var(--row-height) * 5));
 }
 
 .list-head .control {
     position: relative;
-    top: calc(var(--h2-size) - var(--p-size));
-}
-
-#todo {
-    margin-top: 24px;
+    top: calc(calc(var(--h2-size) - var(--p-size)) + 1px);
+    border-radius: 3px 3px 0 0;
 }
 
 @media only screen and (max-width: 600px) {
