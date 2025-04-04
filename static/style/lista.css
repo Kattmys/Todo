@@ -81,6 +81,7 @@ h1 {
 .list-head {
     border-bottom: 2px solid var(--bg1);
     margin-bottom: 6px;
+    position: relative;
 }
 
 .list-head h2 {
@@ -88,10 +89,12 @@ h1 {
 }
 
 .list-head .control {
-    position: relative;
-    top: calc(calc(var(--h2-size) - var(--p-size)) + 1px);
+    /* position: relative; */
+    /* top: calc(calc(var(--h2-size) - var(--p-size)) + 1px); */
     border-radius: 3px 3px 0 0;
-    height: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 @media only screen and (max-width: 600px) {
