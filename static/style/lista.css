@@ -17,9 +17,12 @@ ul {
     display: inline-block;
     width: 0;
     height: 0;
+
     position: relative;
-    right: 15px;
-    font-size: 22px;
+    right: 18px;
+    top: 5px;
+
+    font-size: 30px;
     color: var(--bg1);
 }
 
