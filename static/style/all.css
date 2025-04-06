@@ -10,7 +10,7 @@
     --warn0: #E3B505; /* yellow */
     --warn1: #DB504A; /* red */
 
-    --padding: 40px;
+    --padding: 30px;
 
     color: var(--bg0);
 }

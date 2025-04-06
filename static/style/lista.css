@@ -11,6 +11,9 @@ h2 { font-size: var(--h2-size); }
 ul {
     padding-left: 22px;
     list-style-type: none;
+
+    max-height: 200px;
+    overflow: scroll;
 }
 
 .point {
